@@ -40,7 +40,11 @@ class Publisher extends React.Component {
       "resolution": "640x480"
     }
     axios
-    .post('https://api.opentok.com/v2/project/47179364/broadcast', data)
+    .post('https://thingproxy.freeboard.io/fetch/https://api.opentok.com/v2/project/47179364/broadcast', data, {
+      headers: {
+        'Access-Control-Allow-Origin': true,
+      },
+    })
     .then((result) => {
       console.log('result', result);
       // setProgress(i);
